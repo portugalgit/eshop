@@ -5,8 +5,9 @@ Class Home extends Controller
 {
     public function index()
     {
+        $data['page_title'] = "Home";
         //a classe Controller tem o método view(), que será usado aqui.
-        $this->view("home");
+        $this->view("index",$data);
     }
 }
 

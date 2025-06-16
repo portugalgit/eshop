@@ -8,10 +8,10 @@ Class Controller
     //$data: um array opcional (padrão vazio) que pode conter dados que você quer passar para a view — como variáveis para exibir na página.
     public function view($path,$data = [])
     {   //método verifica se o arquivo da view realmente existe.
-        if(file_exists("../private/views/" .$path. ".php"))
+        if(file_exists("../private/views/" .THEME . $path . ".php"))
         {
             //Inclui o arquivo da visualização
-            include "../private/views/" .$path. ".php";
+            include "../private/views/" .THEME . $path . ".php";
         }
     }
 }
