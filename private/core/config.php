@@ -3,7 +3,7 @@
 define("WEBSITE_TITLE", 'LOJA');
 
 //database
-define('DB_NAME', "ecommerce_db");
+define('DB_NAME', "eshop_db");
 define('DB_USER', "root");
 define('DB_PASS', "");
 
