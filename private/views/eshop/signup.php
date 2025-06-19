@@ -6,13 +6,13 @@
                 
 				<div class="col-sm-4" style="float: none;display: inline-block;">
 					<div class="signup-form"><!--sign up form-->
-						<h2>New User Signup!</h2>
+						<h2>Cadastro de novo usuario!</h2>
 						<form method="post">
-							<input name="name" type="text" placeholder="Name"/>
-							<input name="email" type="email" placeholder="Email Address"/>
+							<input name="name" type="text" placeholder="Nome"/>
+							<input name="email" type="email" placeholder="Endereço de Email"/>
 							<input name="password" type="password" placeholder="Password"/>
-                            <input name="password2" type="password" placeholder="Retype Password"/>
-							<button type="submit" class="btn btn-default">Signup</button>
+                            <input name="password2" type="password" placeholder="Repete Password"/>
+							<button type="submit" class="btn btn-default">Cadastro</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>
