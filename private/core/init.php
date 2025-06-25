@@ -2,6 +2,6 @@
 
 include "config.php";
 include "controller.php";
-include "database.php";
 include "functions.php";
+include "database.php";
 include "app.php";

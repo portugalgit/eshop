@@ -8,7 +8,7 @@ $rota = str_replace("index.php", "", $rota);
 
 
 define('ROOT',$rota);
-define('ASSETS',$rota . "ASSETS/");
+define('ASSETS',$rota . "assets/");
 
 //Carrega configurações ou dependências com init.php.
 require "../private/core/init.php";
