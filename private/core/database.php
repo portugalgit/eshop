@@ -19,34 +19,33 @@ Class Database
 
             die($e->getMessage());
         }
-    }   
+    }
 
-    public static function getInstance()
+   public static function getInstance()
     {
         if(self::$con){
-
-            return self::$con;
+            return self::$con; // ← sempre retorna instância da própria classe
         }
-
-         return $instance = new self();
+         return $instance = new self(); // ← cria nova instância se ainda não existir
     }
 
     /*
     * Metodo leitura do banco de dados
     */
 
-    public function read($query, $data = array())
+    public function read($query,$data = array())
     {
         //preparando a consulta query
         $stm = self::$con->prepare($query);
         // execute a query
         $result = $stm->execute($data);
+
         //se executar
         if($result){
             //busca os dados na tabela
             $data = $stm->fetchAll(PDO::FETCH_OBJ);
             //valide os dados da matriz
-            if(is_array($data))
+            if(is_array($data) && count($data) > 0)
             {
                  //retorna os dados se estiver bem
                  return $data;

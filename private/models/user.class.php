@@ -28,7 +28,7 @@ Class User
         }
 
         //definir regular expression default validar o nome se estiver tudo bem
-        if(empty($data['nome']) || !preg_match("/^[a-zA-Z]+$/", $data['name']))
+        if (empty($data['name']) || !preg_match("/^[a-zA-Z]+$/", $data['name'])) 
         {
             //mensagem de saida
             $this->error .= "Porfavor digite um nome valido!<br>";
@@ -83,6 +83,7 @@ Class User
             $data['rank'] = "customer";
             //data de inserção formato guardado
             $data['date'] = date("Y-m-d H:i:s");
+            $data['password'] = hash('sha1',$data['password']);
 
             //criar a query para inserir os dados na tabela users
             $query = "insert into users (url_address,name,email,password,rank,date) values (:url_address,:name,:email,:password,:rank,:date)";
@@ -112,22 +113,23 @@ Class User
     }
 
     //criar string aleatoria para a senha
-    private function get_random_string_max($Length)
+    private function get_random_string_max($length)
     {
         //matriz de números
-        $array = array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
-        //atribuido o texto a uma saida vazia
-        $text = "";
+         $array = array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+         $text = "";
+
         //obtendo um comprimento aleatorio
-        $length = rand(4,$length);
+        $Length = rand(4, $length);
+
         //faz um loop 
-        for($i=0;$i<$length;$i++){
+        for($i = 0; $i < $Length; $i++){
             //e obtenha um valor aleatorio de 1 á 61
-            $random = rand(0,61);
+            $random = rand(0, count($array) - 1);
             //e adicione ao text
             $text .= $array[$random];
         }
         //retorna o text
-        return text;
+        return $text;
     }
 }
