@@ -57,7 +57,7 @@ Class Database
     }
 
     /*
-    * Metodo escrita do banco de dados
+    * Metodo adicionar no banco de dados
     */
     public function write($query, $data = array())
     {
