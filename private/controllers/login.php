@@ -1,4 +1,5 @@
 <?php
+//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
 
 class Login extends Controller
 {

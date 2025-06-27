@@ -1,7 +1,6 @@
 <?php
-/*
-* Controlador da Classe Usuarios
-*/
+//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
+
 class Signup extends Controller
 {
     public function index()

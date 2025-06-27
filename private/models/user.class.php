@@ -140,11 +140,12 @@ Class User
 
             //criar a query para inserir os dados na tabela users
             $sql = "select * from users where email = :email && password = :password limit 1";
+            //execute a saida
             $result = $db->read($sql,$data);
             //se forem bem adicionados
             if(is_array($result)){  
                 
-                //verifica se usuario logado já tem uma sessão conectada
+                //verifica sessão do usuario 
                 $_SESSION['user_url'] = $result[0]->url_address;
                 //busca o frm home
                 header("Location:" . ROOT . "home");
@@ -156,6 +157,35 @@ Class User
 
         }
         $_SESSION['error'] = $this->error;
+
+    }
+
+    /*
+    * Metodo verificar acesso login
+    */
+    public function ckeck_login()
+    {
+       //verifica sessão do usuario 
+       if(isset($_SESSION['user_url']))
+       {
+         //validar url da sessão e do usuario
+         $arr['url'] = $_SESSION['user_url'];
+          //seleciona a tabela
+         $query = "select * from users where url_address = :url limit 1";
+         //instanciar a classe ou seja chama o BD para adicionar os dados na tabela
+         $db = Database::getInstance();
+
+         //execute a saida
+         $result = $db->read($query,$arr);
+
+                //se forem bem adicionados
+                if(is_array($result)){
+                //retorna o prorio resultado
+                return $result[0];
+            }
+       }
+       //senao funcionar
+       return false;
 
     }
 
