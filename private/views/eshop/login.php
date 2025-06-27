@@ -5,15 +5,16 @@
 			<div class="row" style="text-align: center;">
 
 				<span style="font-size:18px;color:rede;"><?php check_error() ?></span>
+				
 				<div class="col-sm-4 col-sm-offset-1" style="float: none;display: inline-block;">
 					<div class="login-form"><!--login form-->
 						<h2>Login de acesso</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+						<form method="post">
+							<input type="email" name="email" placeholder="Endereço de email" />
+							<input type="password" name="password" placeholder="Palavra passe" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
+								Mantenha-me conectado
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>

@@ -6,14 +6,15 @@ class Signup extends Controller
 {
     public function index()
     {
-        //pega o frm signup
+        //pega os dados do frm signup
         $data['page_title'] = "signup";
-        //se o frm signup tiver preenchido
+
+       //se o metodo de solicitação for POST
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
-            //pega os dados e verifica no modelo da classe user
+            //carrega os dados até o modelo da classe user para ser validado
             $user = $this->load_model("User");
-            //entrega os dados no metodo signup
+            //faz a inscrição
             $user->signup($_POST);
         }
         

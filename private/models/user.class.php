@@ -1,5 +1,9 @@
 <?php
 
+/*
+* Modelo da Classe de usuarios
+*/
+
 Class User
 {
     //definir uma variaver para receber a informação dos erros
@@ -48,11 +52,11 @@ Class User
             $this->error .= "A password deve ter pelo menos 4 caracteres<br>";
         }
 
-        // VERIFICAÇÃO SE O EMAIL EXISTE
+        // VERIFICAÇÃO SE O EMAIL EXISTE NA TABELA DE USUARIOS
         $sql = "select * from users where email = :email limit 1";
         //compara na tabela e os dados de entrada
         $arr['email'] = $data['email'];
-        //verifica a consulta
+        //executa a query
         $check = $db->read($sql,$arr);
         //se for uma matriz
         if(is_array($check)){
@@ -61,9 +65,9 @@ Class User
 
         //url associado a usuario
         $data['url_address'] = $this->get_random_string_max(60);
-        
         //fechar o array que traz o emai
         $arr = false;
+
         //VERIFICAÇÃO DA URL ADDRESS
         $sql = "select * from users where url_address = :url_address limit 1";
         //compara na tabela e os dados de entrada
@@ -104,6 +108,54 @@ Class User
 
     public function login($POST)
     {
+        //os dados serão tratados como matriz da tabela
+        $data = array();
+
+        //instanciar a classe ou seja chama o BD para adicionar os dados na tabela
+        $db = Database::getInstance();
+
+        //remove espaço vazio na entrada dos dados ao frm
+        $data['email']      = trim($POST['email']);
+        $data['password']   = trim($POST['password']);
+       
+        //definir regular expression default validar o email se estiver tudo bem
+        if(empty($data['email']) || !preg_match("/^[a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
+        {
+            //mensagem de saida
+            $this->error .= "Porfavor digite um email valido!<br>";
+        }
+
+        //definir o tamanho da password
+        if(strlen($data['password']) < 4)
+        {
+            //mensagem de saida
+            $this->error .= "A password deve ter pelo menos 4 caracteres<br>";
+        }
+
+        //inserir os dados na tabela senão existir erros
+        if($this->error == ""){
+           
+            //confirmação
+            $data['password'] = hash('sha1',$data['password']);
+
+            //criar a query para inserir os dados na tabela users
+            $sql = "select * from users where email = :email && password = :password limit 1";
+            $result = $db->read($sql,$data);
+            //se forem bem adicionados
+            if(is_array($result)){  
+                
+                //verifica se usuario logado já tem uma sessão conectada
+                $_SESSION['user_url'] = $result[0]->url_address;
+                //busca o frm home
+                header("Location:" . ROOT . "home");
+                //fecha
+                die;
+            }
+                    //mensagem de saida
+                    $this->error .= "Email ou password errado!<br>";
+
+        }
+        $_SESSION['error'] = $this->error;
 
     }
 
