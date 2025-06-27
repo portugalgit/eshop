@@ -10,8 +10,8 @@
 					<div class="signup-form"><!--sign up form-->
 						<h2>Cadastro de novo usuario!</h2>
 						<form method="post">
-							<input name="name" type="text" placeholder="Nome"/>
-							<input name="email" type="email" placeholder="Endereço de Email"/>
+							<input name="name" value="<?= isset($_POST['name']) ? $_POST['name'] : '';?>" type="text" placeholder="Nome"/>
+							<input name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '';?>" type="email" placeholder="Endereço de Email"/>
 							<input name="password" type="password" placeholder="Password"/>
                             <input name="password2" type="password" placeholder="Repete Password"/>
 							<button type="submit" class="btn btn-default">Cadastro</button>

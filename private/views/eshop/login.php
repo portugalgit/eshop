@@ -10,8 +10,8 @@
 					<div class="login-form"><!--login form-->
 						<h2>Login de acesso</h2>
 						<form method="post">
-							<input type="email" name="email" placeholder="Endereço de email" />
-							<input type="password" name="password" placeholder="Palavra passe" />
+							<input type="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '';?>" placeholder="Endereço de email" />
+							<input type="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '';?>" placeholder="Palavra passe" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Mantenha-me conectado
