@@ -2,26 +2,25 @@
 //Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
 
 //a classe Home herda da classe Controller
-Class Home extends Controller
+Class Admin extends Controller
 {
     public function index()
     {
         //carrega os dados até o modelo da classe user para ser validado
         $user = $this->load_model("User");
-         
+
         //verifica se o usuario esta conectado
         $user_data = $user->ckeck_login();
-        
+
         //se estiver ok, atribua os seus dados
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
-            
         }
 
         //matriz de dados que vai para a view
-        $data['page_title'] = "Home";
+        $data['page_title'] = "Admin";
         //a classe Controller tem o método view(), que será usado aqui.
-        $this->view("index",$data);
+        $this->view("admin/index",$data);
     }
 }
 

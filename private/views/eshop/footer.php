@@ -92,6 +92,12 @@
 								<li><a href="#">Order Status</a></li>
 								<li><a href="#">Change Location</a></li>
 								<li><a href="#">FAQ’s</a></li>
+  								
+								<!--Verificar as permissões do usuario admin-->
+								<?php if(isset($data['user_data']) && $data['user_data']->rank == 'admin') : ?>
+									<li><a href="<?=ROOT?>Admin">Admin</a></li>
+								<?php endif;?>
+
 							</ul>
 						</div>
 					</div>
