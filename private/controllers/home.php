@@ -10,9 +10,10 @@ Class Home extends Controller
         $user = $this->load_model("User");
 
         //verifica se o usuario esta conectado
-        $data['user_data'] = $user->ckeck_login();
-        //se estiver atribua oa seus dados
-        if(is_array($data['user_data'])){
+        $user_data = $user->ckeck_login();
+
+        //se estiver ok, atribua os seus dados
+        if(is_array($user_data)){
             $data['user_data'] = $user_data;
         }
 

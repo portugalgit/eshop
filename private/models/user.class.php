@@ -189,6 +189,24 @@ Class User
 
     }
 
+    /*
+    * Metodo verificar acesso logout
+    */
+    public function logout()
+    {
+        //se tiver uma sessão aberta 
+        if(isset($_SESSION['user_url']))
+        {
+            //fecha a sessão
+            unset($_SESSION['user_url']);
+        }
+
+            //busca o frm home
+            header("Location:" . ROOT . "home");
+            //fecha
+            die;
+    }
+
     public function get_user($url)
     {
         
