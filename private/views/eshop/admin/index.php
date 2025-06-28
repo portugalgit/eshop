@@ -1123,7 +1123,7 @@
                         <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
                           <div class="d-flex mb-6">
                             <div class="avatar flex-shrink-0 me-3">
-                              <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                              <img src="<?= ASSETS . THEME ?>admin/img/icons/unicons/wallet.png" alt="User" />
                             </div>
                             <div>
                               <p class="mb-0">Total Balance</p>
