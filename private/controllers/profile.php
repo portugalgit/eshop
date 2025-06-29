@@ -10,7 +10,7 @@ Class Profile extends Controller
         $user = $this->load_model("User");
 
         //verifica se o usuario esta conectado
-        $user_data = $user->ckeck_login();
+        $user_data = $user->ckeck_login(true);
 
         //se estiver ok, atribua os seus dados
         if(is_object($user_data)){

@@ -3,7 +3,7 @@
 <section id="main-content">
 <section class="wrapper">
 
-<div style="min-height: 300px;">
+<div style="min-height: 300px; max-width:1000px; margin:auto;">
     <style type="text/css">
         .white-panel {
             border: 2px solid #444;       /* Borda mais visível */
@@ -26,7 +26,7 @@
     <div class="col-md-4 mb">
 
         <!--WHITE PANEL - TOP USER -->
-       <div class="white-panel" style="text-align: center;">
+       <div class="white-panel" style="text-align: center; text-align:center;">
             <div class="white-header" style="color:grey">
                 <h5 >MINHA CONTA</h5>
             </div>
@@ -42,6 +42,16 @@
                     <p>$ 47,5</p>
                 </div>
             </div>
+         <!---->
+            <div class="row">
+                <div class="col-md-6">
+                    <p id="user_text" class="small mt"><i class="fa fa-edit"> EDITAR</i></p>
+                </div>
+                <div class="col-md-6">
+                    <p id="user_text" class="small mt"><i class="fa fa-delet"> DELETAR</i></p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>

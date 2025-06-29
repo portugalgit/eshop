@@ -163,7 +163,7 @@ Class User
     /*
     * Metodo verificar acesso login
     */
-    public function ckeck_login()
+    public function ckeck_login($redirect = false)
     {
        //verifica sessão do usuario 
        if(isset($_SESSION['user_url']))
@@ -184,9 +184,14 @@ Class User
                 return $result[0];
             }
        }
-       //senao funcionar
-       return false;
-
+            //senao existir usuario logado redireciona
+            if($redirect){
+                header("Location: " . ROOT . "login");
+                //fecha a sessão
+                die;
+            }
+            //senao funcionar
+            return false;
     }
 
     /*
