@@ -1,13 +1,14 @@
 <?php
-//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
+// Nota: Toda requisição do usuário passa primeiro pelo Controller, que valida e trata as ações necessárias
 
+// A classe Logout herda da classe base Controller
 class Logout extends Controller
 {
     public function index()
     {
-        //carrega os dados até o modelo da classe user para ser validado
+        // Carrega o modelo "User" para lidar com dados e validações do usuário
         $user = $this->load_model("User");
-        //sair
+        // Executa o processo de logout (encerrar sessão)
         $user->logout();
 
     }

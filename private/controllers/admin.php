@@ -1,25 +1,27 @@
 <?php
-//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
+// Nota: Toda requisição do usuário passa primeiro pelo Controller, que valida as informações recebidas.
 
-//a classe Home herda da classe Controller
+
+// A classe Admin herda da classe base Controller
 Class Admin extends Controller
 {
     public function index()
     {
-        //carrega os dados até o modelo da classe user para ser validado
+        // Carrega o modelo "User" para manipular e validar dados do usuário
         $user = $this->load_model("User");
 
-        //verifica se o usuario esta conectado
+        // Verifica se o usuário está autenticado e tem permissão de administrador
         $user_data = $user->ckeck_login(true, ["admin"]);
 
-        //se estiver ok, atribua os seus dados
+        // Se a autenticação for bem-sucedida, armazena os dados do usuário
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
         }
 
-        //matriz de dados que vai para a view
+        // Define o título da página para ser usado na view
         $data['page_title'] = "Admin";
-        //a classe Controller tem o método view(), que será usado aqui.
+
+        // Renderiza a view "admin/index", passando os dados coletados
         $this->view("admin/index",$data);
     }
 }
