@@ -1,22 +1,25 @@
 <?php
-//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
+// Nota: Toda requisição (como formulários) passa primeiro pelo Controller, que valida e processa os dados
 
+// A classe Login herda da classe base Controller
 class Login extends Controller
 {
     public function index()
     {
-        //pega os dados do frm login
+       // Define o título da página para ser usado na view
         $data['page_title'] = "login";
 
-        //se o metodo de solicitação for POST
+        // Verifica se o método da requisição é POST (formulário enviado)
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
-            //carrega os dados até o modelo da classe user para ser validado
+            // Carrega o modelo "User" para processar a autenticação
             $user = $this->load_model("User");
-            //faz o login
+           
+            // Executa o processo de login com os dados enviados pelo formulário
             $user->login($_POST);
         }
 
+        // Renderiza a view "login", passando os dados definidos
         $this->view('login',$data);
     }
 }

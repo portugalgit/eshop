@@ -1,202 +1,187 @@
 <?php
 
 /*
-* Modelo da Classe de usuarios
-*/
-
+ * Modelo da Classe de Usuários
+ */
 Class User
 {
-    //definir uma variaver para receber a informação dos erros
+    // Variável privada para armazenar mensagens de erro
     private $error = "";
 
-    //metodo responsavel pelo recebimento e verificação dados do frm_signup
+    //Método responsável por processar o cadastro (signup)
     public function signup($POST)
     {
-        //os dados serão tratados como matriz da tabela
+        // Inicializa o array de dados
         $data = array();
 
-        //instanciar a classe ou seja chama o BD para adicionar os dados na tabela
+        // Obtém a instância do banco de dados (singleton)
         $db = Database::getInstance();
 
-        //remove espaço vazio na entrada dos dados ao frm
+        // Limpa os espaços em branco dos dados do formulário
         $data['name']       = trim($POST['name']);
         $data['email']      = trim($POST['email']);
         $data['password']   = trim($POST['password']);
         $password2          = trim($POST['password2']);
 
-        //definir regular expression default validar o email se estiver tudo bem
+        // Validação de email (não vazio e padrão válido)
         if(empty($data['email']) || !preg_match("/^[a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
         {
-            //mensagem de saida
             $this->error .= "Porfavor digite um email valido!<br>";
         }
 
-        //definir regular expression default validar o nome se estiver tudo bem
+        // Validação do nome (não vazio e apenas letras)
         if (empty($data['name']) || !preg_match("/^[a-zA-Z]+$/", $data['name'])) 
         {
-            //mensagem de saida
             $this->error .= "Porfavor digite um nome valido!<br>";
         }
 
-        //validar a password
+        // Verifica se as senhas coincidem
         if($data['password'] !== $password2)
         {
-            //mensagem de saida
             $this->error .= "A password não corresponde!<br>";
         }
 
-        //definir o tamanho da password
+        // Verifica o tamanho mínimo da senha
         if(strlen($data['password']) < 4)
         {
-            //mensagem de saida
             $this->error .= "A password deve ter pelo menos 4 caracteres<br>";
         }
 
-        // VERIFICAÇÃO SE O EMAIL EXISTE NA TABELA DE USUARIOS
+       // Verifica se o e-mail já existe na base de dados
         $sql = "select * from users where email = :email limit 1";
-        //compara na tabela e os dados de entrada
         $arr['email'] = $data['email'];
-        //executa a query
         $check = $db->read($sql,$arr);
-        //se for uma matriz
         if(is_array($check)){
             $this->error .= "O email já esta em uso na tabela";
         }
 
-        //url associado a usuario
+        // Gera um identificador único (URL) para o usuário
         $data['url_address'] = $this->get_random_string_max(60);
-        //fechar o array que traz o emai
         $arr = false;
 
-        //VERIFICAÇÃO DA URL ADDRESS
+         // Verifica se o URL gerado já existe
         $sql = "select * from users where url_address = :url_address limit 1";
-        //compara na tabela e os dados de entrada
         $arr['url_address'] = $data['url_address'];
-        //verifica a consulta
         $check = $db->read($sql,$arr);
-        //se for uma matriz
         if(is_array($check)){
-        //nova url associado a usuario
+        // Gera um novo caso exista duplicado
         $data['url_address'] = $this->get_random_string_max(60);
         }
 
-        //inserir os dados na tabela senão existir erros
+        // Se não houver erros, insere o usuário no banco
         if($this->error == ""){
-           
-            //classificação
             $data['rank'] = "customer";
-            //data de inserção formato guardado
             $data['date'] = date("Y-m-d H:i:s");
             $data['password'] = hash('sha1',$data['password']);
 
-            //criar a query para inserir os dados na tabela users
             $query = "insert into users (url_address,name,email,password,rank,date) values (:url_address,:name,:email,:password,:rank,:date)";
-            //pega o metodo "write" executa a query e adiciona na tabela os dados do formulario
             $result = $db->write($query,$data);
 
-            //se forem bem adicionados
             if($result){
-
-                //busca o frm login
                 header("Location:" . ROOT . "login");
-                //fecha
                 die;
             }
         }
+         // Salva os erros na sessão
         $_SESSION['error'] = $this->error;
     }
 
+
+    /**
+     * Método responsável por autenticar o login
+     */
     public function login($POST)
     {
         //os dados serão tratados como matriz da tabela
         $data = array();
 
-        //instanciar a classe ou seja chama o BD para adicionar os dados na tabela
+        // Obtém instância do banco de dados
         $db = Database::getInstance();
 
-        //remove espaço vazio na entrada dos dados ao frm
+        // Limpa espaços dos dados recebidos
         $data['email']      = trim($POST['email']);
         $data['password']   = trim($POST['password']);
        
-        //definir regular expression default validar o email se estiver tudo bem
+        // Validação de email
         if(empty($data['email']) || !preg_match("/^[a-zA-Z_-]+@[a-zA-Z]+.[a-zA-Z]+$/", $data['email']))
         {
-            //mensagem de saida
             $this->error .= "Porfavor digite um email valido!<br>";
         }
 
-        //definir o tamanho da password
+        // Validação do tamanho da senha
         if(strlen($data['password']) < 4)
         {
-            //mensagem de saida
             $this->error .= "A password deve ter pelo menos 4 caracteres<br>";
         }
 
-        //inserir os dados na tabela senão existir erros
+        // Se não houver erros, tenta autenticar o usuário
         if($this->error == ""){
-           
-            //confirmação
             $data['password'] = hash('sha1',$data['password']);
 
-            //criar a query para inserir os dados na tabela users
             $sql = "select * from users where email = :email && password = :password limit 1";
-            //execute a saida
             $result = $db->read($sql,$data);
-            //se forem bem adicionados
+
             if(is_array($result)){  
-                
-                //verifica sessão do usuario 
                 $_SESSION['user_url'] = $result[0]->url_address;
-                //busca o frm home
                 header("Location:" . ROOT . "home");
-                //fecha
                 die;
             }
-                    //mensagem de saida
                     $this->error .= "Email ou password errado!<br>";
-
         }
-        $_SESSION['error'] = $this->error;
 
+        $_SESSION['error'] = $this->error;
     }
 
-    /*
-    * Metodo verificar acesso login
-    */
-    public function ckeck_login($redirect = false)
+    /**
+     * Método para verificar se o usuário está autenticado
+     */
+    public function ckeck_login($redirect = false, $allowed = array())
     {
-       //verifica sessão do usuario 
-       if(isset($_SESSION['user_url']))
-       {
-         //validar url da sessão e do usuario
-         $arr['url'] = $_SESSION['user_url'];
-          //seleciona a tabela
-         $query = "select * from users where url_address = :url limit 1";
-         //instanciar a classe ou seja chama o BD para adicionar os dados na tabela
-         $db = Database::getInstance();
+        $db = Database::getInstance();
 
-         //execute a saida
-         $result = $db->read($query,$arr);
+         // Caso haja restrição de acesso por nível (rank)
+        if(count($allowed) > 0){  
 
-                //se forem bem adicionados
-                if(is_array($result)){
-                //retorna o prorio resultado
-                return $result[0];
+            $arr['url'] = $_SESSION['user_url'];
+            $query = "select rank from users where url_address = :url limit 1";
+            $result = $db->read($query,$arr);
+           
+            if(is_array($result))
+            {
+                 $result = $result[0];
+                 if(in_array($result->rank, $allowed)){
+                    return $result;
+                 }   
             }
-       }
+                // Redireciona para login se não tiver permissão
+                header("Location: " . ROOT . "login");
+                die;
+         }else{
+            // Verifica se a sessão do usuário está ativa
+            if(isset($_SESSION['user_url']))
+            {
+                $arr = false;
+                $arr['url'] = $_SESSION['user_url'];
+                $query = "select * from users where url_address = :url limit 1";
+                $result = $db->read($query,$arr);
+
+                    if(is_array($result))
+                {
+                    return $result[0];
+                }
+            }
             //senao existir usuario logado redireciona
             if($redirect){
                 header("Location: " . ROOT . "login");
-                //fecha a sessão
                 die;
             }
-            //senao funcionar
+        }
             return false;
     }
 
-    /*
-    * Metodo verificar acesso logout
-    */
+     /**
+     * Método responsável por encerrar a sessão do usuário
+     */
     public function logout()
     {
         //se tiver uma sessão aberta 
@@ -217,7 +202,9 @@ Class User
         
     }
 
-    //criar string aleatoria para a senha
+     /**
+     * Gera uma string aleatória com tamanho variável até um limite
+     */
     private function get_random_string_max($length)
     {
         //matriz de números

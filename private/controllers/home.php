@@ -1,26 +1,26 @@
 <?php
-//Nota: Cada frm que usuario passa se depara primeiro com o controller que valida a informação
+// Nota: Toda requisição (formulário ou rota) do usuário passa primeiro pelo Controller, que valida as informações recebidas.
 
-//a classe Home herda da classe Controller
+// A classe Home herda da classe base Controller
 Class Home extends Controller
 {
     public function index()
     {
-        //carrega os dados até o modelo da classe user para ser validado
+        // Carrega o modelo "User" para lidar com dados e validações do usuário
         $user = $this->load_model("User");
          
-        //verifica se o usuario esta conectado
+        // Verifica se o usuário está autenticado
         $user_data = $user->ckeck_login();
         
-        //se estiver ok, atribua os seus dados
+        // Se a autenticação for bem-sucedida, armazena os dados do usuário
         if(is_object($user_data)){
             $data['user_data'] = $user_data;
-            
         }
 
-        //matriz de dados que vai para a view
+        // Define o título da página para ser enviado à view
         $data['page_title'] = "Home";
-        //a classe Controller tem o método view(), que será usado aqui.
+       
+        // Renderiza a view "index", passando os dados definidos
         $this->view("index",$data);
     }
 }
