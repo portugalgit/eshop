@@ -1,14 +1,14 @@
 <?php $this->view('admin/header',$data); ?>
 
-<body>
- <!-- Layout wrapper -->
+  <body>
+    <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
-        
         <!-- Menu -->
+
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index.html" class="app-brand-link">
+            <a href="index" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <span class="text-primary">
                   <svg
@@ -60,7 +60,9 @@
                   </svg>
                 </span>
               </span>
-              <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bold ms-2">
+                <a href="<?=ROOT?>" class="logo"><b>ADMINISTRADOR</b></a>
+              </span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -104,9 +106,6 @@
                     <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
-                
-                <!--fim copia-->
-
                 <li class="menu-item">
                   <a
                     href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
@@ -121,8 +120,7 @@
                     href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
                     target="_blank"
                     class="menu-link">
-                    <div class="text-truncate" data-i18n="Academy">Academy</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                    <div class="logout" data-i18n="Academy" href="<?=ROOT?>logout">Sair</div>
                   </a>
                 </li>
               </ul>
@@ -1234,6 +1232,4 @@
             </div>
             <!-- / Content -->
 
-
-  
 <?php $this->view('admin/footer',$data); ?>

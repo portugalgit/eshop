@@ -163,8 +163,17 @@ Class User
     /*
     * Metodo verificar acesso login
     */
-    public function ckeck_login($redirect = false)
+    public function ckeck_login($redirect = false, $allowed = array())
     {
+       //verifica se existe uma conexão e avaliar o nivel de permissão
+       if(count($allowed) > 0 && in_array($row->rank, $allowed)){
+
+       }else{
+                //redireciona ao login
+                header("Location: " . ROOT . "login");
+                //fecha a sessão
+                die;
+       }
        //verifica sessão do usuario 
        if(isset($_SESSION['user_url']))
        {
