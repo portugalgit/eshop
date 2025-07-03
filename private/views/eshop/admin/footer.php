@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
             <!-- Footer -->
-=======
-          <!-- Footer -->
->>>>>>> faseAssets
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
                 <div
@@ -63,17 +58,10 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/item/sneat-dashboard-pro-bootstrap/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
 
     <!-- Core JS -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <script src="<?= ASSETS . THEME ?>admin/vendor/libs/jquery/jquery.js"></script>
 
@@ -85,18 +73,26 @@
     <script src="<?= ASSETS . THEME ?>admin/vendor/js/menu.js"></script>
 =======
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+=======
+    <script src="<?= ASSETS . THEME?>admin/vendor/libs/jquery/jquery.js"></script>
+>>>>>>> faseAssets
 
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/vendor/libs/popper/popper.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/vendor/js/bootstrap.js"></script>
 
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
+<<<<<<< HEAD
     <script src="../assets/vendor/js/menu.js"></script>
+>>>>>>> faseAssets
+=======
+    <script src="<?= ASSETS . THEME?>admin/vendor/js/menu.js"></script>
 >>>>>>> faseAssets
 
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+<<<<<<< HEAD
 <<<<<<< HEAD
     <script src="<?= ASSETS . THEME ?>admin/vendor/libs/apex-charts/apexcharts.js"></script>
 
@@ -108,13 +104,20 @@
     <script src="<?= ASSETS . THEME ?>admin/js/dashboards-analytics.js"></script>
 =======
     <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+=======
+    <script src="<?= ASSETS . THEME?>admin/vendor/libs/apex-charts/apexcharts.js"></script>
+>>>>>>> faseAssets
 
     <!-- Main JS -->
 
-    <script src="../assets/js/main.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/main.js"></script>
 
     <!-- Page JS -->
+<<<<<<< HEAD
     <script src="../assets/js/dashboards-analytics.js"></script>
+>>>>>>> faseAssets
+=======
+    <script src="<?= ASSETS . THEME?>admin/js/dashboards-analytics.js"></script>
 >>>>>>> faseAssets
 
     <!-- Place this tag before closing body tag for github widget button. -->

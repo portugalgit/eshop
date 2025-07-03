@@ -3,7 +3,7 @@
 <html
   lang="en"
   class="layout-menu-fixed layout-compact"
-  data-assets-path="../assets/"
+  data-assets-path="<?= ASSETS . THEME ?>assets/"
   data-template="vertical-menu-template-free">
   <head>
     <meta charset="utf-8" />
@@ -16,7 +16,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= ASSETS . THEME ?>assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

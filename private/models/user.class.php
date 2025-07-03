@@ -143,7 +143,7 @@ Class User
         if(count($allowed) > 0){  
 
             $arr['url'] = $_SESSION['user_url'];
-            $query = "select rank from users where url_address = :url limit 1";
+            $query = "select * from users where url_address = :url limit 1";
             $result = $db->read($query,$arr);
            
             if(is_array($result))
