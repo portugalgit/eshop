@@ -84,7 +84,7 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="index.html" class="menu-link">
+                  <a href="index" class="menu-link">
                     <div class="text-truncate" data-i18n="Analytics">Analytics</div>
                   </a>
                 </li>
@@ -126,143 +126,108 @@
               </ul>
             </li>
 
-            <!-- Layouts -->
+            <!-- Produtos -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div class="text-truncate" data-i18n="Layouts">Layouts</div>
+                <i class="menu-icon tf-icons bx bx-package"></i>
+                <div class="text-truncate" data-i18n="Layouts">Produtos</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Without menu">Without menu</div>
+                  <a href="<?=ROOT?>admin/produto" class="menu-link">
+                    <div class="text-truncate" data-i18n="Without menu" href="<?=ROOT?>admin/produto/add">Adicionar Produto</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Without navbar">Without navbar</div>
+                  <a href="<?=ROOT?>admin/produto" class="menu-link">
+                    <div class="text-truncate" data-i18n="Without navbar" href="<?=ROOT?>admin/produto/edit">Editar Produto</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div class="text-truncate" data-i18n="Blank">Blank</div>
+                  <a href="<?=ROOT?>admin/produto" class="menu-link">
+                    <div class="text-truncate" data-i18n="Fluid" href="<?=ROOT?>admin/produto/delete">Deletar Produto</div>
                   </a>
                 </li>
               </ul>
             </li>
 
-            <!-- Front Pages -->
+            <!-- Categoria -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-store"></i>
-                <div class="text-truncate" data-i18n="Front Pages">Front Pages</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div class="text-truncate" data-i18n="Layouts">Categorias</div>
               </a>
+
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
-                    class="menu-link"
-                    target="_blank">
-                    <div class="text-truncate" data-i18n="Landing">Landing</div>
+                  <a href="<?=ROOT?>admin/categoria" class="menu-link">
+                    <div class="text-truncate" data-i18n="Without menu" href="<?=ROOT?>admin/categoria/add">Adicionar Produto</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
-                    class="menu-link"
-                    target="_blank">
-                    <div class="text-truncate" data-i18n="Pricing">Pricing</div>
+                  <a href="<?=ROOT?>admin/categoria" class="menu-link">
+                    <div class="text-truncate" data-i18n="Without navbar" href="<?=ROOT?>admin/categoria/edit">Editar Produto</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/payment-page.html"
-                    class="menu-link"
-                    target="_blank">
-                    <div class="text-truncate" data-i18n="Payment">Payment</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
-                    class="menu-link"
-                    target="_blank">
-                    <div class="text-truncate" data-i18n="Checkout">Checkout</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
-                    class="menu-link"
-                    target="_blank">
-                    <div class="text-truncate" data-i18n="Help Center">Help Center</div>
+                  <a href="<?=ROOT?>admin/categoria" class="menu-link">
+                    <div class="text-truncate" data-i18n="Fluid" href="<?=ROOT?>admin/categoria/delete">Deletar Produto</div>
                   </a>
                 </li>
               </ul>
+            </li>
+
+             <!-- Pedidos -->
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+                target="_blank"
+                class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cart"></i>
+                <div class="text-truncate" data-i18n="Email">Pedidos</div>
+              </a>
+            </li>
+
+            <!-- Settings -->
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+                target="_blank"
+                class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div class="text-truncate" data-i18n="Email">Settings</div>
+              </a>
+            </li>
+                        <!-- Settings -->
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+                target="_blank"
+                class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div class="text-truncate" data-i18n="Email">Imagens</div>
+              </a>
+            </li>
+            <!--clientes-->
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
+                target="_blank"
+                class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div class="text-truncate" data-i18n="Email">Clientes</div>
+              </a>
             </li>
 
             <!-- Apps & Pages -->
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Apps &amp; Pages</span>
             </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-envelope"></i>
-                <div class="text-truncate" data-i18n="Email">Email</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chat"></i>
-                <div class="text-truncate" data-i18n="Chat">Chat</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div class="text-truncate" data-i18n="Calendar">Calendar</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-grid"></i>
-                <div class="text-truncate" data-i18n="Kanban">Kanban</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-              </a>
-            </li>
-            <!-- Pages -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div class="text-truncate" data-i18n="Account Settings">Account Settings</div>
-              </a>
+
+           
+           <!-- Pages -->
+            
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="pages-account-settings-account.html" class="menu-link">
@@ -288,17 +253,17 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                  <a href="auth-login-basic" class="menu-link" target="_blank">
                     <div class="text-truncate" data-i18n="Basic">Login</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                  <a href="auth-register-basic" class="menu-link" target="_blank">
                     <div class="text-truncate" data-i18n="Basic">Register</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+                  <a href="auth-forgot-password-basic" class="menu-link" target="_blank">
                     <div class="text-truncate" data-i18n="Basic">Forgot Password</div>
                   </a>
                 </li>
@@ -311,12 +276,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="pages-misc-error.html" class="menu-link">
+                  <a href="pages-misc-error" class="menu-link">
                     <div class="text-truncate" data-i18n="Error">Error</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" class="menu-link">
+                  <a href="pages-misc-under-maintenance" class="menu-link">
                     <div class="text-truncate" data-i18n="Under Maintenance">Under Maintenance</div>
                   </a>
                 </li>
@@ -326,7 +291,7 @@
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
             <!-- Cards -->
             <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
+              <a href="cards-basic" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div class="text-truncate" data-i18n="Basic">Cards</div>
               </a>
@@ -339,27 +304,27 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
+                  <a href="ui-accordion" class="menu-link">
                     <div class="text-truncate" data-i18n="Accordion">Accordion</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
+                  <a href="ui-alerts" class="menu-link">
                     <div class="text-truncate" data-i18n="Alerts">Alerts</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-badges.html" class="menu-link">
+                  <a href="ui-badges" class="menu-link">
                     <div class="text-truncate" data-i18n="Badges">Badges</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-buttons.html" class="menu-link">
+                  <a href="ui-buttons" class="menu-link">
                     <div class="text-truncate" data-i18n="Buttons">Buttons</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-carousel.html" class="menu-link">
+                  <a href="ui-carousel" class="menu-link">
                     <div class="text-truncate" data-i18n="Carousel">Carousel</div>
                   </a>
                 </li>
@@ -369,32 +334,32 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-dropdowns.html" class="menu-link">
+                  <a href="ui-dropdowns" class="menu-link">
                     <div class="text-truncate" data-i18n="Dropdowns">Dropdowns</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-footer.html" class="menu-link">
+                  <a href="ui-footer" class="menu-link">
                     <div class="text-truncate" data-i18n="Footer">Footer</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-list-groups.html" class="menu-link">
+                  <a href="ui-list-groups" class="menu-link">
                     <div class="text-truncate" data-i18n="List Groups">List groups</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-modals.html" class="menu-link">
+                  <a href="ui-modals" class="menu-link">
                     <div class="text-truncate" data-i18n="Modals">Modals</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-navbar.html" class="menu-link">
+                  <a href="ui-navbar" class="menu-link">
                     <div class="text-truncate" data-i18n="Navbar">Navbar</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-offcanvas.html" class="menu-link">
+                  <a href="ui-offcanvas" class="menu-link">
                     <div class="text-truncate" data-i18n="Offcanvas">Offcanvas</div>
                   </a>
                 </li>
@@ -520,37 +485,6 @@
                 <div class="text-truncate" data-i18n="Tables">Tables</div>
               </a>
             </li>
-            <!-- Data Tables -->
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-grid"></i>
-                <div class="text-truncate" data-i18n="Datatables">Datatables</div>
-                <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
-              </a>
-            </li>
-            <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-            <li class="menu-item">
-              <a
-                href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div class="text-truncate" data-i18n="Support">Support</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-file"></i>
-                <div class="text-truncate" data-i18n="Documentation">Documentation</div>
-              </a>
-            </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -567,35 +501,21 @@
                 <i class="icon-base bx bx-menu icon-md"></i>
               </a>
             </div>
-
             <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
-              <!-- Search -->
-              <div class="navbar-nav align-items-center me-auto">
-                <div class="nav-item d-flex align-items-center">
-                  <span class="w-px-22 h-px-22"><i class="icon-base bx bx-search icon-md"></i></span>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none ps-1 ps-sm-2 d-md-block d-none"
-                    placeholder="Search..."
-                    aria-label="Search..." />
-                </div>
-              </div>
-              <!-- /Search -->
 
+            <!--user data-->
               <ul class="navbar-nav flex-row align-items-center ms-md-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-4">
                   <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free"
+                    class="centered"
+                    href="profile"
                     data-icon="octicon-star"
                     data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
+                    data-show-count="true" aria-label="Star th"><?=$data['user_data']->name?></a
                   >
                 </li>
-
+                <!--/user data-->
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a
@@ -603,7 +523,7 @@
                     href="javascript:void(0);"
                     data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="<?= ASSETS . THEME?>admin/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -612,7 +532,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="<?= ASSETS . THEME?>admin/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -671,7 +591,7 @@
                     <div class="d-flex align-items-start row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary mb-3">Congratulations John! 🎉</h5>
+                          <h5 class="card-title text-primary mb-3">Congratulations <?=$data['user_data']->name?> 🎉</h5>
                           <p class="mb-6">
                             You have done 72% more sales today.<br />Check your new badge in your profile.
                           </p>
@@ -682,7 +602,7 @@
                       <div class="col-sm-5 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-6">
                           <img
-                            src="../assets/img/illustrations/man-with-laptop.png"
+                            src="<?= ASSETS . THEME?>admin/img/illustrations/man-with-laptop.png"
                             height="175"
                             alt="View Badge User" />
                         </div>
@@ -698,7 +618,7 @@
                           <div class="card-title d-flex align-items-start justify-content-between mb-4">
                             <div class="avatar flex-shrink-0">
                               <img
-                                src="../assets/img/icons/unicons/chart-success.png"
+                                src="<?= ASSETS . THEME?>admin/img/icons/unicons/chart-success.png"
                                 alt="chart success"
                                 class="rounded" />
                             </div>
@@ -732,7 +652,7 @@
                           <div class="card-title d-flex align-items-start justify-content-between mb-4">
                             <div class="avatar flex-shrink-0">
                               <img
-                                src="../assets/img/icons/unicons/wallet-info.png"
+                                src="<?= ASSETS . THEME?>admin/img/icons/unicons/wallet-info.png"
                                 alt="wallet info"
                                 class="rounded" />
                             </div>
@@ -862,7 +782,7 @@
                         <div class="card-body">
                           <div class="card-title d-flex align-items-start justify-content-between mb-4">
                             <div class="avatar flex-shrink-0">
-                              <img src="../assets/img/icons/unicons/paypal.png" alt="paypal" class="rounded" />
+                              <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/paypal.png" alt="paypal" class="rounded" />
                             </div>
                             <div class="dropdown">
                               <button
@@ -893,7 +813,7 @@
                         <div class="card-body">
                           <div class="card-title d-flex align-items-start justify-content-between mb-4">
                             <div class="avatar flex-shrink-0">
-                              <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
+                              <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
                             </div>
                             <div class="dropdown">
                               <button
@@ -1079,7 +999,7 @@
                         <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
                           <div class="d-flex mb-6">
                             <div class="avatar flex-shrink-0 me-3">
-                              <img src="../assets/img/icons/unicons/wallet.png" alt="User" />
+                              <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/wallet.png" alt="User" />
                             </div>
                             <div>
                               <p class="mb-0">Total Balance</p>
@@ -1135,7 +1055,7 @@
                       <ul class="p-0 m-0">
                         <li class="d-flex align-items-center mb-6">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/paypal.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1150,7 +1070,7 @@
                         </li>
                         <li class="d-flex align-items-center mb-6">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/wallet.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1165,7 +1085,7 @@
                         </li>
                         <li class="d-flex align-items-center mb-6">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/chart.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1180,7 +1100,7 @@
                         </li>
                         <li class="d-flex align-items-center mb-6">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/cc-primary.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/cc-primary.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1195,7 +1115,7 @@
                         </li>
                         <li class="d-flex align-items-center mb-6">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/wallet.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1210,7 +1130,7 @@
                         </li>
                         <li class="d-flex align-items-center">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
+                            <img src="<?= ASSETS . THEME?>admin/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">

@@ -3,7 +3,7 @@
 <html
   lang="en"
   class="layout-wide customizer-hide"
-  data-assets-path="../assets/"
+  data-assets-path="<?php ASSETS . THEME ?>admin/"
   data-template="vertical-menu-template-free">
   <head>
     <meta charset="utf-8" />
