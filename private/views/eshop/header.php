@@ -34,9 +34,16 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<!--apresentar o telefone do usuario no home-->
+								<?php if(isset($data['user_data'])):?>
+								<li><a href="#"><i class="fa fa-phone"></i> <?= $data['user_data']->fone?></a></li>
+								<?php endif;?>
 								
+								<!--apresentar o email do usuario no home-->
+								<?php if(isset($data['user_data'])):?>
+								<li><a href="#"><i class="fa fa-envelope"></i> <?= $data['user_data']->email?></a></li>
+								<?php endif;?>
+
 								<!--apresentar o nome do usuario no home-->
 								<?php if(isset($data['user_data'])):?>
 								<li><a href="#"><i class="fa fa-user"></i> <?= $data['user_data']->name?></a></li>
@@ -147,8 +154,8 @@
 										<li><a href="blog-single">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404">404</a></li>
-								<li><a href="contact-us">Contact</a></li>
+								<li><a href="<?=ROOT?>">404</a></li>
+								<li><a href="<?=ROOT?>">Contact</a></li>
 							</ul>
 						</div>
 					</div>

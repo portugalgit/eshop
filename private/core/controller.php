@@ -1,16 +1,24 @@
 <?php
-// Classe responsável por controlar a lógica de carregamento das views e modelos (MVC)
 
 Class Controller
 {
-    // Método para carregar uma página de visualização (view)
+     /**
+     * Carrega uma página de visualização (view)
+     *
+     * @param string $path Caminho relativo da view
+     * @param array $data Dados que podem ser usados na view
+     */
     public function view($path,$data = [])
-    {   
-        // Verifica se o arquivo da view existe
+    { 
+          
+        //se o arquivo da view existe
         if(file_exists("../private/views/" .THEME . $path . ".php"))
         {
-            // Inclui o arquivo da view para exibição ao usuário
+            // Inclui o arquivo da view para exibição
             include "../private/views/" .THEME . $path . ".php";
+        }else{
+             // Se o arquivo da view não existir, exibe a página 404
+            include "../private/views/" .THEME . "404.php";
         }
     }
 

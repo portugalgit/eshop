@@ -61,7 +61,7 @@
                 </span>
               </span>
               <span class="app-brand-text demo menu-text fw-bold ms-2">
-                <a href="<?=ROOT?>" class="logo"><b>ADMINISTRADOR</b></a>
+                <a href="<?=ROOT?>admin" class="logo"><b>ADMINISTRADOR</b></a>
               </span>
             </a>
 
@@ -84,8 +84,8 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item active">
-                  <a href="index" class="menu-link">
-                    <div class="text-truncate" data-i18n="Analytics">Analytics</div>
+                  <a href="<?=ROOT?>admin" class="menu-link">
+                    <div class="text-truncate" data-i18n="Analytics">Analiticos</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -94,7 +94,6 @@
                     target="_blank"
                     class="menu-link">
                     <div class="text-truncate" data-i18n="CRM">CRM</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -103,7 +102,6 @@
                     target="_blank"
                     class="menu-link">
                     <div class="text-truncate" data-i18n="eCommerce">eCommerce</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -112,7 +110,6 @@
                     target="_blank"
                     class="menu-link">
                     <div class="text-truncate" data-i18n="Logistics">Logistics</div>
-                    <div class="badge rounded-pill bg-label-primary text-uppercase fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
