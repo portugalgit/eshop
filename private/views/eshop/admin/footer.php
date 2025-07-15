@@ -1,88 +1,92 @@
-          <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl">
-                <div
-                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                  <div class="mb-2 mb-md-0">
-                    ©
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    , made with ❤️ by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
-                  </div>
-                  <div class="d-none d-lg-inline-block">
-                    <a
-                      href="https://themeselection.com/item/category/admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Admin Templates</a
-                    >
-
-                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                    <a
-                      href="https://themeselection.com/item/category/bootstrap-admin-templates/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Bootstrap Dashboard</a
-                    >
-
-                    <a
-                      href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                      target="_blank"
-                      class="footer-link me-4"
-                      >Documentation</a
-                    >
-
-                    <a
-                      href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues"
-                      target="_blank"
-                      class="footer-link"
-                      >Support</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
+ 
+ <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2014 - Alvarez.is
+              <a href="index.html#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
           </div>
-          <!-- Content wrapper -->
-        </div>
-        <!-- / Layout page -->
-      </div>
+      </footer>
+      <!--footer end-->
+  </section>
 
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="<?= ASSETS . THEME?>admin/js/jquery.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/jquery-1.8.3.min.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="<?= ASSETS . THEME?>admin/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/jquery.scrollTo.min.js"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<?= ASSETS . THEME?>admin/js/jquery.sparkline.js"></script>
 
 
-    <!-- Core JS -->
+    <!--common script for all pages-->
+    <script src="<?= ASSETS . THEME?>admin/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="<?= ASSETS . THEME?>admin/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="<?= ASSETS . THEME?>admin/js/gritter-conf.js"></script>
 
-    <script src="<?= ASSETS . THEME?>admin/vendor/libs/jquery/jquery.js"></script>
+    <!--script for this page-->
+    <script src="<?= ASSETS . THEME?>admin/js/sparkline-chart.js"></script>    
+	<script src="<?= ASSETS . THEME?>admin/js/zabuto_calendar.js"></script>	
+	
+	<script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Welcome to Dashgum!',
+            // (string | mandatory) the text inside the notification
+            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+            // (string | optional) the image to display on the left
+            image: 'assets/img/ui-sam.jpg',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: true,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
 
-    <script src="<?= ASSETS . THEME?>admin/vendor/libs/popper/popper.js"></script>
-    <script src="<?= ASSETS . THEME?>admin/vendor/js/bootstrap.js"></script>
+        return false;
+        });
+	</script>
+	
+	<script type="application/javascript">
+        $(document).ready(function () {
+            $("#date-popover").popover({html: true, trigger: "manual"});
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+        
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    {type: "text", label: "Special event", badge: "00"},
+                    {type: "block", label: "Regular event", }
+                ]
+            });
+        });
+        
+        
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+    </script>
+  
 
-    <script src="<?= ASSETS . THEME?>admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
-    <script src="<?= ASSETS . THEME?>admin/vendor/js/menu.js"></script>
-
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
-    <script src="<?= ASSETS . THEME?>admin/vendor/libs/apex-charts/apexcharts.js"></script>
-
-    <!-- Main JS -->
-
-    <script src="<?= ASSETS . THEME?>admin/js/main.js"></script>
-
-    <!-- Page JS -->
-    <script src="<?= ASSETS . THEME?>admin/js/dashboards-analytics.js"></script>
-
-    <!-- Place this tag before closing body tag for github widget button. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
