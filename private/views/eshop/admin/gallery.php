@@ -10,13 +10,16 @@
     <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=ASSETS . THEME ?>admin/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="<?=ASSETS . THEME ?>admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="<?=ASSETS . THEME ?>admin/css/style.css" rel="stylesheet">
-    <link href="<?=ASSETS . THEME ?>admin/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -219,23 +222,23 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Components</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
+                          <li class="active"><a  href="gallery.html">Gallery</a></li>
                           <li><a  href="todo_list.html">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
+                          <li><a  href="blank.html">Blank Page</a></li>
                           <li><a  href="login.html">Login</a></li>
                           <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
@@ -282,14 +285,132 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><!--/wrapper -->
+          	<h3><i class="fa fa-angle-right"></i> Gallery</h3>
+          	<hr>
+				<div class="row mt">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port04.jpg"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port05.jpg"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port06.jpg"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+
+				<div class="row mt">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port01.jpg"><img class="img-responsive" src="assets/img/portfolio/port01.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port02.jpg"><img class="img-responsive" src="assets/img/portfolio/port02.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port03.jpg"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+
+				<div class="row mt mb">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port04.jpg"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port05.jpg"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/portfolio/port06.jpg"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -297,7 +418,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="blank.html#" class="go-top">
+              <a href="gallery.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -306,25 +427,31 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/bootstrap.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="<?=ASSETS . THEME ?>admin/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.scrollTo.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="<?=ASSETS . THEME ?>admin/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+  
+  <script type="text/javascript">
+      $(function() {
+        //    fancybox
+          jQuery(".fancybox").fancybox();
+      });
+
+  </script>
+  
   <script>
       //custom select box
 
       $(function(){
-          $('select.styled').customSelect();
+          $("select.styled").customSelect();
       });
 
   </script>

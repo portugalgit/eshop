@@ -10,13 +10,14 @@
     <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=ASSETS . THEME ?>admin/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="<?=ASSETS . THEME ?>admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="<?=ASSETS . THEME ?>admin/css/style.css" rel="stylesheet">
-    <link href="<?=ASSETS . THEME ?>admin/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -230,12 +231,12 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
+                          <li><a  href="blank.html">Blank Page</a></li>
                           <li><a  href="login.html">Login</a></li>
                           <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
@@ -260,12 +261,12 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
+                          <li class="active"><a  href="morris.html">Morris</a></li>
                           <li><a  href="chartjs.html">Chartjs</a></li>
                       </ul>
                   </li>
@@ -281,15 +282,67 @@
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><!--/wrapper -->
+          <section class="wrapper">
+          <h3><i class="fa fa-angle-right"></i> Chartjs Charts</h3>
+              <!-- page start-->
+              <div class="tab-pane" id="chartjs">
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Doughnut</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="doughnut" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Line</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="line" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Radar</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="radar" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Polar Area</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="polarArea" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Bar</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="bar" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+							  <h4><i class="fa fa-angle-right"></i> Pie</h4>
+                              <div class="panel-body text-center">
+                                  <canvas id="pie" height="300" width="400"></canvas>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>          
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -297,7 +350,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="blank.html#" class="go-top">
+              <a href="chartjs.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -306,19 +359,19 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/bootstrap.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="<?=ASSETS . THEME ?>admin/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.scrollTo.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="<?=ASSETS . THEME ?>admin/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
+    <script src="assets/js/chart-master/Chart.js"></script>
+    <script src="assets/js/chartjs-conf.js"></script>
     
   <script>
       //custom select box

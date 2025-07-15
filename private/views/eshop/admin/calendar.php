@@ -10,13 +10,14 @@
     <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=ASSETS . THEME ?>admin/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="<?=ASSETS . THEME ?>admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/js/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
         
     <!-- Custom styles for this template -->
-    <link href="<?=ASSETS . THEME ?>admin/css/style.css" rel="stylesheet">
-    <link href="<?=ASSETS . THEME ?>admin/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -219,23 +220,23 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Components</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
+                          <li class="active"><a  href="calendar.html">Calendar</a></li>
                           <li><a  href="gallery.html">Gallery</a></li>
                           <li><a  href="todo_list.html">Todo List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
+                          <li><a  href="blank.html">Blank Page</a></li>
                           <li><a  href="login.html">Login</a></li>
                           <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
@@ -275,21 +276,44 @@
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><!--/wrapper -->
+          <section class="wrapper">
+          	<h3><i class="fa fa-angle-right"></i> Calendar</h3>
+              <!-- page start-->
+              <div class="row mt">
+                  <aside class="col-lg-3 mt">
+                      <h4><i class="fa fa-angle-right"></i> Draggable Events</h4>
+                      <div id="external-events">
+                          <div class="external-event label label-theme">My Event 1</div>
+                          <div class="external-event label label-success">My Event 2</div>
+                          <div class="external-event label label-info">My Event 3</div>
+                          <div class="external-event label label-warning">My Event 4</div>
+                          <div class="external-event label label-danger">My Event 5</div>
+                          <div class="external-event label label-default">My Event 6</div>
+                          <div class="external-event label label-theme">My Event 7</div>
+                          <div class="external-event label label-info">My Event 8</div>
+                          <div class="external-event label label-success">My Event 9</div>
+                          <p class="drop-after">
+                              <input type="checkbox" id="drop-remove">
+                              Remove After Drop
+                          </p>
+                      </div>
+                  </aside>
+                  <aside class="col-lg-9 mt">
+                      <section class="panel">
+                          <div class="panel-body">
+                              <div id="calendar" class="has-toolbar"></div>
+                          </div>
+                      </section>
+                  </aside>
+              </div>
+              <!-- page end-->
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -297,7 +321,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="blank.html#" class="go-top">
+              <a href="calendar.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -306,25 +330,26 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/bootstrap.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="<?=ASSETS . THEME ?>admin/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.scrollTo.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+	<script src="assets/js/fullcalendar/fullcalendar.min.js"></script>    
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="<?=ASSETS . THEME ?>admin/js/common-scripts.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+	<script src="assets/js/calendar-conf-events.js"></script>    
+  
   <script>
       //custom select box
 
       $(function(){
-          $('select.styled').customSelect();
+          $("select.styled").customSelect();
       });
 
   </script>

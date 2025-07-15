@@ -10,13 +10,14 @@
     <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=ASSETS . THEME ?>admin/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="<?=ASSETS . THEME ?>admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">    
         
     <!-- Custom styles for this template -->
-    <link href="<?=ASSETS . THEME ?>admin/css/style.css" rel="stylesheet">
-    <link href="<?=ASSETS . THEME ?>admin/css/style-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -230,12 +231,12 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Extra Pages</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="blank.html">Blank Page</a></li>
+                          <li><a  href="blank.html">Blank Page</a></li>
                           <li><a  href="login.html">Login</a></li>
                           <li><a  href="lock_screen.html">Lock Screen</a></li>
                       </ul>
@@ -260,12 +261,12 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
                           <span>Charts</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="morris.html">Morris</a></li>
+                          <li class="active"><a  href="morris.html">Morris</a></li>
                           <li><a  href="chartjs.html">Chartjs</a></li>
                       </ul>
                   </li>
@@ -282,14 +283,48 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><!--/wrapper -->
+          <h3><i class="fa fa-angle-right"></i> Morris Charts</h3>
+              <!-- page start-->
+              <div id="morris">
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 1</h4>
+                              <div class="panel-body">
+                                  <div id="hero-graph" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 2</h4>
+                              <div class="panel-body">
+                                  <div id="hero-bar" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt">
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 3</h4>
+                              <div class="panel-body">
+                                  <div id="hero-area" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="content-panel">
+                              <h4><i class="fa fa-angle-right"></i> Chart Example 4</h4>
+                              <div class="panel-body">
+                                  <div id="hero-donut" class="graph"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -297,7 +332,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="blank.html#" class="go-top">
+              <a href="morris.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -306,19 +341,20 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/bootstrap.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="<?=ASSETS . THEME ?>admin/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.scrollTo.min.js"></script>
-    <script src="<?=ASSETS . THEME ?>admin/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-    <script src="<?=ASSETS . THEME ?>admin/js/common-scripts.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
+    <script src="assets/js/morris-conf.js"></script>
     
   <script>
       //custom select box
