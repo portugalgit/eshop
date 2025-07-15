@@ -1,6 +1,6 @@
 <?php
 
-define("WEBSITE_TITLE", 'LOJA');
+define("WEBSITE_TITLE", 'Loja');
 
 //database
 define('DB_NAME', "eshop_db");
