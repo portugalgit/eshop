@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Jul-2025 às 18:27
+-- Tempo de geração: 17-Jul-2025 às 22:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.0.30
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
-  `category` varchar(30) NOT NULL
+  `category` varchar(30) NOT NULL,
+  `disabled` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,9 +47,9 @@ CREATE TABLE `products` (
   `price` double NOT NULL,
   `quantity` int(11) NOT NULL,
   `image` varchar(500) NOT NULL,
-  `image2` varchar(500) NOT NULL,
-  `image3` varchar(500) NOT NULL,
-  `image4` varchar(500) NOT NULL,
+  `image2` varchar(500) DEFAULT NULL,
+  `image3` varchar(500) DEFAULT NULL,
+  `image4` varchar(500) DEFAULT NULL,
   `date` datetime NOT NULL,
   `slag` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -86,7 +87,8 @@ INSERT INTO `users` (`id`, `url_address`, `name`, `email`, `fone`, `password`, `
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `category` (`category`);
+  ADD KEY `category` (`category`),
+  ADD KEY `disabled` (`disabled`);
 
 --
 -- Índices para tabela `products`
