@@ -6,8 +6,9 @@
     .add_new{
         width: 500px;
         height: 300px;
-        background-color: #cecccc;
-        position: absolute;
+        background-color: #eeebebff;
+        box-shadow: 0px 0px 10px #aaa;
+        position: absoLute;
         padding: 6px;
     }
 
@@ -27,8 +28,27 @@
 	                  	  	  <h4><i class="fa fa-angle-right"></i> Categoria dos Produtos <button class="btn btn-primary btn-xs" onclick="show_add_new(event)"><i class="fa fa-plus"></i> Add Novo</button></h4>
 	                  	  	  
                               <!--add nova categoria-->
-                              <div class="add_new hide"></div>
+                              <div class="add_new hide">
+                            
+                                <!-- BASIC FORM ELELEMNTS -->
+                                        <h4 class="mb"><i class="fa fa-angle-right"></i> Add nova Categoria</h4>
+                                        <form class="form-horizontal style-form" method="post">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 col-sm-2 control-label">Nome Categoria:</label>
+                                                <div class="col-sm-10">
+                                                    <input id="category" name="category" type="text" class="form-control" autofocus>
+                                                </div>
+                                            </div>
+
+                                            <button type="button" class="btn btn-primary" style="position:absoLute;bottom:10px; right:10px;">Salvar</button>
+                                       
+                                        </form>
+                                <br><br>                              
+                             </div>
+                             <!--add nova categoria- end-->
+
                               <hr>
+
                               <thead>
                               <tr>
                                   <th><i class="fa fa-bullhorn"></i> Categoria</th>
@@ -64,7 +84,10 @@
                 {
                    var show_add_box = document.querySelector(".add_new");
                    if(show_add_box.classList.contains("hide")){
-                      show_add_box.classList.remove("hide");
+                      
+                        show_add_box.classList.remove("hide");
+                        var category_input = document.querySelector("#category");
+                        category_input.focus();
                     
                    }else{
                       show_add_box.classList.add("hide");
