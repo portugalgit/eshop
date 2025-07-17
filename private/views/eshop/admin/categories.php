@@ -3,16 +3,31 @@
 
   
   <style type="text/css">
+    .add_new{
+        width: 500px;
+        height: 300px;
+        background-color: #cecccc;
+        position: absolute;
+        padding: 6px;
+    }
+
+    .show{
+        display:block;
+    }
+
+    .hide{
+         display:none;
+    }
 
   </style>
    <div class="row mt">
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
-	                  	  	  <h4><i class="fa fa-angle-right"></i> Categoria dos Produtos <button class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Add Novo</button></h4>
+	                  	  	  <h4><i class="fa fa-angle-right"></i> Categoria dos Produtos <button class="btn btn-primary btn-xs" onclick="show_add_new(event)"><i class="fa fa-plus"></i> Add Novo</button></h4>
 	                  	  	  
                               <!--add nova categoria-->
-                              <div class="add_new"></div>
+                              <div class="add_new hide"></div>
                               <hr>
                               <thead>
                               <tr>
@@ -42,6 +57,21 @@
                       </div><!-- /content-panel -->
                   </div><!-- /col-md-12 -->
               </div><!-- /row -->
+
+              <script type="text/javascript">
+
+                function show_add_new(e)
+                {
+                   var show_add_box = document.querySelector(".add_new");
+                   if(show_add_box.classList.contains("hide")){
+                      show_add_box.classList.remove("hide");
+                    
+                   }else{
+                      show_add_box.classList.add("hide");
+                   }
+                   
+                }
+              </script>
 
 
 <?php $this->view('admin/footer',$data); ?>
