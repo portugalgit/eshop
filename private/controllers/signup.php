@@ -3,6 +3,7 @@
 
 class Signup extends Controller
 {
+    //METODO PRINCIPAL DA CLASSE SIGNUP
     public function index()
     {
         // Define o título da página para ser utilizado na view

@@ -4,6 +4,7 @@
 // A classe Logout herda da classe base Controller
 class Logout extends Controller
 {
+    //METODO PRINCIPAL DA CLASSE LOGOUT
     public function index()
     {
         // Carrega o modelo "User" para lidar com dados e validações do usuário

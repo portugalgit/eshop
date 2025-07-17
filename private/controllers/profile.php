@@ -4,6 +4,7 @@
 // A classe Profile herda da classe base Controller
 Class Profile extends Controller
 {
+    //METODO PRINCIPAL DA CLASSE PROFILE
     public function index()
     {
         // Carrega o modelo "User" para lidar com dados e validações do usuário

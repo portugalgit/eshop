@@ -4,6 +4,7 @@
 // A classe Home herda da classe base Controller
 Class Home extends Controller
 {
+    //METODO PRINCIPAL DA CLASSE HOME
     public function index()
     {
         // Carrega o modelo "User" para lidar com dados e validações do usuário

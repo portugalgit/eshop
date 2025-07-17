@@ -9,12 +9,13 @@
               
               	  <p class="centered"><a href="profile.html"><img src="<?=ASSETS . THEME ?>admin/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered"><?=$data['user_data']->name?></h5>
-                
+                  <h5 class="centered" style="font-size: 11px;"><?=$data['user_data']->email?></h5>
+
                 
                   <!-- sidebar Dashboard--> 	  	
                   <li class="sub-menu">
                       <a href="<?=ROOT?>admin/index">
-                          <i class="fa fa-barcode"></i>
+                          <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>         
@@ -35,10 +36,11 @@
                 <!-- sidebar categoria--> 	
                   <li class="sub-menu">
                       <a href="<?=ROOT?>admin/categories">
-                          <i class="fa fa-desktop"></i>
+                          <i class="fa fa-list-alt"></i>
                           <span>Categorias</span>
                       </a>
                       <ul class="sub">
+                          <li><a  href="<?=ROOT?>admin/categories">Ver Categoria</a></li>
                           <li><a  href="<?=ROOT?>admin/categories/add">Novo Categoria</a></li>
                           <li><a  href="<?=ROOT?>admin/categories/edit">Editar Categoria</a></li>
                           <li><a  href="<?=ROOT?>admin/categories/delete">Excluir Categoria</a></li>
@@ -48,7 +50,7 @@
                 <!-- sidebar Orders--> 	  	
                   <li class="sub-menu">
                       <a href="<?=ROOT?>admin/orders">
-                          <i class="fa fa-barcode"></i>
+                          <i class="fa fa-reorder"></i>
                           <span>Pedidos </span>
                       </a>
                   </li> 
@@ -92,3 +94,14 @@
           </div>
       </aside>
       <!--sidebar end-->
+
+
+     <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+          	<h3><i class="fa fa-angle-right"></i><?= $data['user_data']->name?></h3>
+          	<div class="row mt">
+            <div class="col-lg-12">

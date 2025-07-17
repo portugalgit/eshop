@@ -4,6 +4,7 @@
 // A classe Login herda da classe base Controller
 class Login extends Controller
 {
+    //METODO PRINCIPAL DA CLASSE LOGIN
     public function index()
     {
        // Define o título da página para ser usado na view
